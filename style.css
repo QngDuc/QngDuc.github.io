@@ -1,3 +1,63 @@
+/* FanArt Modal Styles */
+.fanart-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.8);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+.fanart-modal.show {
+    display: flex;
+}
+.fanart-modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: none;
+}
+.fanart-modal-img {
+    max-width: 100%;
+    max-height: 80vh;
+    border-radius: 12px;
+    box-shadow: 0 0 30px #000;
+    display: block;
+    margin: auto;
+}
+.fanart-modal-artist {
+    color: #fff;
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 10px;
+    font-weight: bold;
+}
+.fanart-modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #ff6b6b;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 * {
     margin: 0;
     padding: 0;
@@ -14,6 +74,15 @@ body {
     font-family: 'Arial', sans-serif;
 }
 
+/* Disable default browser zoom on ctrl + scroll */
+@media screen and (min-width: 0px) {
+    html {
+        -ms-text-size-adjust: none;
+        -webkit-text-size-adjust: none;
+        text-size-adjust: none;
+    }
+}
+
 .book-container {
     perspective: 2000px;
     margin: 50px auto;
@@ -25,7 +94,7 @@ body {
     height: 500px;
     transform-style: preserve-3d;
     transform: rotateX(10deg);
-    transition: transform 0.5s;
+    transition: transform 0.3s ease;
 }
 
 .page {
@@ -39,6 +108,7 @@ body {
     padding: 20px;
     box-shadow: 0 0 20px rgba(0,0,0,0.1);
     background-image: linear-gradient(to right, #f9f9f9 0%, #fff 100%);
+    overflow: hidden;
 }
 
 .cover {
@@ -58,9 +128,15 @@ body {
 .page10 { z-index: 3; }
 .page11 { z-index: 2; }
 .page12 { z-index: 1; }
+.page13 { z-index: 0; }
+.page14 { z-index: -1; }
+.page15 { z-index: -2; }
+.page16 { z-index: -3; }
+.page17 { z-index: -4; }
+.page18 { z-index: -5; }
 
 .back-cover {
-    z-index: 0;
+    z-index: -7;
     background: linear-gradient(45deg, #ffd93d, #ff6b6b);
 }
 
@@ -104,7 +180,10 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    max-height: 100%;
+    overflow-y: auto;
 }
 
 .photo-section {
@@ -148,8 +227,10 @@ body {
 .section-title {
     text-align: center;
     color: #ff6b6b;
-    margin-bottom: 20px;
-    font-size: 1.8em;
+    margin-bottom: 15px;
+    font-size: 1.4em;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .wish-container, .friends-wishes, .colleagues-wishes {
@@ -186,17 +267,20 @@ body {
 }
 
 .memory-photo-container {
-    margin-top: 15px;
-    border-radius: 10px;
+    margin-top: 10px;
+    border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    max-width: 100%;
 }
 
 .friend-photos {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    margin-top: 15px;
+    gap: 8px;
+    margin-top: 10px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .friend-memory {
@@ -211,10 +295,73 @@ body {
     transform: scale(1.05);
 }
 
+/* FanArt Gallery Styles */
+.fanart-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    padding: 10px;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.fanart-item {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.fanart-item:hover {
+    transform: translateY(-5px);
+}
+
+.fanart-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+}
+
+.artist-overlay {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    font-size: 1em;
+    padding: 6px 0;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    pointer-events: none;
+}
+
+.fanart-info {
+    padding: 10px;
+    text-align: center;
+}
+
+.artist-name {
+    font-weight: bold;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.fanart-caption {
+    color: #888;
+    font-style: italic;
+}
 .wish-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+    gap: 10px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .colleague-wish {
@@ -251,7 +398,10 @@ body {
 .memory-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+    gap: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px;
 }
 
 .memory-item {
@@ -291,7 +441,9 @@ body {
 
 .video-grid {
     display: grid;
-    gap: 20px;
+    gap: 15px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .video-message {
