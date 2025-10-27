@@ -2,48 +2,62 @@
 /* FanArt Modal Styles */
 /* ===== FanArt Gallery Styles ===== */
 .fanart-grid {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 20px;
-    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    padding: 20px;
     height: 100%;
     overflow-y: auto;
+    max-width: 1200px;
+    margin: -10px auto 0;
 }
+
 .fanart-page h2 {
     text-align: center;
     color: #ff6b6b;
-    margin-top: 30px;
+    margin: 15px 0;
+    font-size: 1.8em;
+    text-shadow: 2px 2px 4px rgba(255, 107, 107, 0.2);
+    letter-spacing: 1px;
 }
+
 .fanart-item {
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    flex: 0 1 300px;
+    background: rgba(255, 255, 255, 0.05);
     overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .fanart-img-container {
     position: relative;
     width: 100%;
-    height: 180px;
+    height: 220px;
     overflow: hidden;
     cursor: zoom-in;
-    transition: transform 0.3s ease;
+    transition: transform 0.4s ease;
     z-index: 5;
 }
 
 .fanart-img {
     width: 100%;
-    height: 180px;
+    height: 220px;
     object-fit: cover;
     display: block;
-    transition: transform 0.3s ease;
+    transition: transform 0.5s ease;
     pointer-events: none;
+    filter: brightness(0.95);
 }
 
 .fanart-img-container:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
 }
 
 .fanart-img-container:hover .fanart-img {
-    transform: scale(1.05);
+    transform: scale(1.08);
+    filter: brightness(1.05);
 }
 
 .artist-overlay {
@@ -51,14 +65,15 @@
     left: 0;
     bottom: -100%;
     width: 100%;
-    background: linear-gradient(transparent, rgba(0,0,0,0.8));
-    color: #ffffff00;
-    font-size: 0.95em;
-    padding: 30px 10px 10px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.85));
+    color: #fff;
+    font-size: 1.1em;
+    padding: 35px 15px 15px;
     text-align: center;
     font-weight: bold;
-    letter-spacing: 0.5px;
-    transition: bottom 0.3s ease;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    transition: all 0.4s ease;
 }
 
 .fanart-img-container:hover .artist-overlay {
@@ -247,26 +262,28 @@ body {
     overflow: hidden;
 }
 
-.page1 { z-index: 20; }
-.page2 { z-index: 19; }
-.page3 { z-index: 18; }
-.page4 { z-index: 17; }
-.page5 { z-index: 16; }
-.page6 { z-index: 15; }
-.page7 { z-index: 14; }
-.page8 { z-index: 13; }
-.page9 { z-index: 12; }
-.page10 { z-index: 11; }
-.page11 { z-index: 10; }
-.page12 { z-index: 9; }
-.page13 { z-index: 8; }
-.page14 { z-index: 7; }
-.page15 { z-index: 6; }
-.page16 { z-index: 5; }
-.page17 { z-index: 4; }
-.page18 { z-index: 3; }
-.page19 { z-index: 2; }
-.page20 { z-index: 1; }
+.page1 { z-index: 22; }
+.page2 { z-index: 21; }
+.page3 { z-index: 20; }
+.page4 { z-index: 19; }
+.page5 { z-index: 18; }
+.page6 { z-index: 17; }
+.page7 { z-index: 16; }
+.page8 { z-index: 15; }
+.page9 { z-index: 14; }
+.page10 { z-index: 13; }
+.page11 { z-index: 12; }
+.page12 { z-index: 11; }
+.page13 { z-index: 10; }
+.page14 { z-index: 9; }
+.page15 { z-index: 8; }
+.page16 { z-index: 7; }
+.page17 { z-index: 6; }
+.page18 { z-index: 5; }
+.page19 { z-index: 4; }
+.page20 { z-index: 3; }
+.page21 { z-index: 2; }
+.page22 { z-index: 1; }
 
 .back-content {
     position: absolute;
@@ -464,8 +481,14 @@ body {
     background: rgba(255, 255, 255, 0);
     overflow-y: auto;
     opacity: 1;
-    scrollbar-width: thin;
     scrollbar-color: rgba(255, 107, 107, 0.5) rgba(255, 255, 255, 0.1);
+}
+
+/* Apply scrollbar-width only in browsers that support it (Firefox) */
+@supports (scrollbar-width: thin) {
+    .content-wrapper {
+        scrollbar-width: thin;
+    }
 }
 
 .message-section {
@@ -647,25 +670,27 @@ body {
 /* FanArt Gallery Styles */
 /* ===== FanArt Gallery Layout ===== */
 .fanart-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
     padding: 20px;
     height: 100%;
     overflow-y: auto;
     max-width: 1200px;
     margin: 0 auto;
-    margin-bottom: 20px;
 }
 
 /* FanArt Card Styles */
 .fanart-item {
-    background: rgba(255, 255, 255, 0);
+    flex: 0 1 300px;
+    background: rgba(255, 255, 255, 0.05);
     overflow: hidden;
-    transition: all 0.3s ease;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: all 0.4s ease;
     position: relative;
-    display: flex;
-    flex-direction: column;
 }
 
 .fanart-item:hover {
@@ -679,6 +704,16 @@ body {
     height: 250px;
     object-fit: cover;
     transition: transform 0.5s ease;
+}
+
+.fanart-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    cursor: pointer;
 }
 
 .fanart-item:hover .fanart-img {
