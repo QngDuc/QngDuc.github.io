@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Book Card</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="book-container">
+        <div class="book">
+            <!-- Cover Page -->
+            <div class="page cover">
+                <div class="cover-content">
+                    <h1>Happy Birthday!</h1>
+                    <div class="cover-img">
+                        <img src="Book art/Wish_cover.png" alt="Birthday Cover" class="cover-photo">
+                    </div>
+                    <p class="open-message">Bấm để đọc✨</p>
+                </div>
+            </div>
+
+            <!-- First Page -->
+            <div class="page page1">
+                <div class="page-content">
+                    <div class="photo-section">
+                        <img src="https://picsum.photos/300/200" alt="Celebration" class="page-photo">
+                    </div>
+                    <div class="message-section">
+                        <h2>Dear Friend</h2>
+                        <p>On your special day, I wish you all the happiness in the world!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Second Page -->
+            <div class="page page2">
+                <div class="page-content birthday-content">E html>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Book Card</title>
+<html lang="en">
+<!-- Second Page -->
+            <div class="page page2">
+                <div class="page-content birthday-content">
+                    <div class="cake-container">
+                        <div class="cake">
+                            <div class="cake-decorations"></div>
+                            <div class="candle">
+                                <div class="flame"></div>
+                            </div>
+                        </div>
+                        <div class="sprinkles-container">
+                            <div class="sprinkle"></div>
+                            <div class="sprinkle"></div>
+                            <div class="sprinkle"></div>
+                        </div>
+                        <div class="balloons">
+                            <div class="balloon balloon1"></div>
+                            <div class="balloon balloon2"></div>
+                            <div class="balloon balloon3"></div>
+                        </div>
+                    </div>
+                    <button class="surprise-btn">Make a wish! 🎉</button>
+                </div>
+            </div>  
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="book-container">
+            <div class="book">
+            <!-- Cover Page -->
+            <div class="page cover">
+                <div class="cover-content">
+                    <h1>Happy Birthday!</h1>
+                    <div class="cover-img">
+                        <img src="https://picsum.photos/200/200" alt="Birthday Cover" class="cover-photo">
+                    </div>
+                    <p class="open-message">Bấm để đọc✨</p>
+                </div>
+            </div>
+
+            <!-- First Page -->
+            <div class="page page1">
+                <div class="page-content">
+                    <div class="photo-section">
+                        <img src="https://picsum.photos/300/200" alt="Celebration" class="page-photo">
+                    </div>
+                    <div class="message-section">
+                        <h2>Dear Friend</h2>
+                        <p>On your special day, I wish you all the happiness in the world!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Birthday Page -->
+            <div class="page page2">
+                <div class="page-content birthday-content">
+                    <div class="cake-container">
+                        <div class="cake">
+                            <div class="cake-decorations"></div>
+                            <div class="candle">
+                                <div class="flame"></div>
+                            </div>
+                        </div>
+                        <div class="sprinkles-container">
+                            <div class="sprinkle"></div>
+                            <div class="sprinkle"></div>
+                            <div class="sprinkle"></div>
+                        </div>
+                        <div class="balloons">
+                            <div class="balloon balloon1"></div>
+                            <div class="balloon balloon2"></div>
+                            <div class="balloon balloon3"></div>
+                        </div>
+                    </div>
+                    <button class="surprise-btn">Make a wish! 🎉</button>
+                </div>
+            </div>
+
+            <!-- Page 3 - Family Wishes -->
+            <div class="page page3">
+                <div class="page-content family-page">
+                    <h2 class="section-title">Lời mở đầu❤️</h2>
+                    <div class="wish-container">
+                        <div class="family-wish">
+                            <div class="author-info">
+                                <img src="https://cdn.discordapp.com/avatars/737650638917468242/0249475759f3d0b41d3df808d9b598e7.webp?size=160" alt="Mod_discord" class="author-photo">
+                                <span class="author-name">QngDuc (Mod discord và Phát triển web)</span>
+                            </div>
+                            <p class="wish-text">
+                                Gửi anh Hiếu, Chúc anh sinh nhật vui vẻ, tuổi mới thật nhiều sức khỏe,
+                                thành công và luôn giữ được tinh thần nhiệt huyết như mọi khi. Em cảm ơn anh vì luôn là người dẫn dắt,
+                                hỗ trợ và truyền cảm hứng cho em. Mong anh sẽ có một năm tuyệt vời phía trước! 🤗
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page 4 - Best Friends' Wishes -->
+            <div class="page page4">
+                <div class="page-content friends-page">
+                    <h2 class="section-title">Từ các viewer🌟</h2>
+                    <div class="friends-wishes">
+                        <div class="friend-wish">
+                            <div class="author-info">
+                                <img src="https://cdn.discordapp.com/avatars/832102836694941707/611d1f25a0ae5bd83dc2775d3ec356b8.webp?size=160" alt="Mod_youtube" class="author-photo">
+                                <span class="author-name">AppleSang</span>
+                            </div>
+                            <div class="wish-content">
+                                <p class="wish-text">Test🎉</p>
+                            </div>
+                        </div>
+                        <div class="friend-wish">
+                            <div class="author-info">
+                                <img src="https://media.discordapp.net/attachments/1400073121699991672/1400124541405233152/Khong_Co_Tieu_e132.png?ex=68feda57&is=68fd88d7&hm=a40e0c7e183eb9dda09b0f485a4617052dc4eca6a396c62484a212b7e763f631&=&format=webp&quality=lossless&width=419&height=419" alt="Mod_youtube" class="author-photo">
+                                <span class="author-name">Noxy (Nox Ch. trước đây là YoshinoVN)</span>
+                            </div>
+                            <div class="wish-content">
+                                <p class="wish-text">Chúc ăng Tùng Chiến snvv và đạt nhiều thành công trong sự nghiệp Youtube với tư cách là thành viên của CKG chính hiệu
+                                                    Do em ko có nhiều thời gian để xem stream nhưng mà em chỉ mong đc rằng là anh sẽ đọc đc lời chúc của em W Youtube/
+                                                     W Chat/ W Tùng Chiến, Chúc anh thành công 🥳🎂</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page 5 - More Friends' Wishes -->
+            <div class="page page5">
+                <div class="page-content friends-page">
+                    <div class="friends-wishes">
+                        <div class="friend-wish">
+                            <div class="author-info">
+                                <img src="https://media.discordapp.net/attachments/1400073121699991672/1400124541405233152/Khong_Co_Tieu_e132.png?ex=68feda57&is=68fd88d7&hm=a40e0c7e183eb9dda09b0f485a4617052dc4eca6a396c62484a212b7e763f631&=&format=webp&quality=lossless&width=419&height=419" alt="Viewer" class="author-photo">
+                                <span class="author-name">vợ của QngDuc</span>
+                            </div>
+                            <div class="wish-content">
+                                <p class="wish-text">Chúc a Desmond Vũ tuổi mới ngày càng phát triển sự nghiệp hơn, ra video mới chất lượng hơn video cũ, chăm stream hơn</p>
+                            </div>
+                        </div>
+                        <div class="friend-wish">
+                            <div class="author-info">
+                                <img src="https://media.discordapp.net/attachments/1400073121699991672/1400124541405233152/Khong_Co_Tieu_e132.png?ex=68feda57&is=68fd88d7&hm=a40e0c7e183eb9dda09b0f485a4617052dc4eca6a396c62484a212b7e763f631&=&format=webp&quality=lossless&width=419&height=419" alt="Viewer" class="author-photo">
+                                <span class="author-name">Giấc mơ khắm lọ của Darling(Vũ)</span>
+                            </div>
+                            <div class="wish-content">
+                                <p class="wish-text">Em chúc anh Hiếu một sn vui vẻ khi nào anh live em donate 500k cho anh.Cảm ơn bé Tún đã giúp giờ ăn cơm của em thêm hài hước </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page 6 - More Friends' Wishes -->
+            <div class="page page6">
+                <div class="page-content friends-page">
+                    <div class="friends-wishes">
+                        <div class="friend-wish">
+                            <div class="author-info">
+                                <img src="https://media.discordapp.net/attachments/1400073121699991672/1400124541405233152/Khong_Co_Tieu_e132.png?ex=68feda57&is=68fd88d7&hm=a40e0c7e183eb9dda09b0f485a4617052dc4eca6a396c62484a212b7e763f631&=&format=webp&quality=lossless&width=419&height=419" alt="Viewer" class="author-photo">
+                                <span class="author-name">Shane</span>
+                            </div>
+                            <div class="wish-content">
+                                <p class="wish-text">Happy Birthday anh mặt filter Mỹ</p>
+                            </div>
+                        </div>
+                        <div class="friend-wish">
+                            <div class="author-info">
+                                <img src="https://media.discordapp.net/attachments/1400073121699991672/1400124541405233152/Khong_Co_Tieu_e132.png?ex=68feda57&is=68fd88d7&hm=a40e0c7e183eb9dda09b0f485a4617052dc4eca6a396c62484a212b7e763f631&=&format=webp&quality=lossless&width=419&height=419" alt="Viewer" class="author-photo">
+                                <span class="author-name">Michael Phantom</span>
+                            </div>
+                            <div class="wish-content">
+                                <p class="wish-text">Chúc mừng sinh nhật anh Hiếu. Chúc anh Hiếu có máy PC xịn hơn và nhiều fan hơn để mọi người biết đến giáo sư OBS nhaaa 🎂🎉🥳</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page 7 - More Friends' Wishes -->
+            <div class="page page7">
+                <div class="page-content friends-page">
+                    <div class="friends-wishes">
+                        <div class="friend-wish">
+                            <div class="author-info">
+                                <img src="https://media.discordapp.net/attachments/1400073121699991672/1400124541405233152/Khong_Co_Tieu_e132.png?ex=68feda57&is=68fd88d7&hm=a40e0c7e183eb9dda09b0f485a4617052dc4eca6a396c62484a212b7e763f631&=&format=webp&quality=lossless&width=419&height=419" alt="Viewer" class="author-photo">
+                                <span class="author-name">Ai đó</span>
+                            </div>
+                            <div class="wish-content">
+                                <p class="wish-text">Chúc azai desmondvu sinh nhật vui vẻ, vạn sự như ý, an khang thịnh vượng , tỷ sự như mơ</p>
+                            </div>
+                        </div>
+                        <div class="friend-wish">
+                            <div class="author-info">
+                                <img src="https://media.discordapp.net/attachments/1400073121699991672/1400124541405233152/Khong_Co_Tieu_e132.png?ex=68feda57&is=68fd88d7&hm=a40e0c7e183eb9dda09b0f485a4617052dc4eca6a396c62484a212b7e763f631&=&format=webp&quality=lossless&width=419&height=419" alt="Viewer" class="author-photo">
+                                <span class="author-name">Void</span>
+                            </div>
+                            <div class="wish-content">
+                                <p class="wish-text">em chúc anh tún sinh nhật vv và thành công trong sự nghiệp của mình</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page 8 - More Friends' Wishes -->
+            <div class="page page8">
+                <div class="page-content friends-page">
+                    <div class="friends-wishes">
+                        <div class="friend-wish">
+                            <div class="author-info">
+                                <img src="https://media.discordapp.net/attachments/1400073121699991672/1400124541405233152/Khong_Co_Tieu_e132.png?ex=68feda57&is=68fd88d7&hm=a40e0c7e183eb9dda09b0f485a4617052dc4eca6a396c62484a212b7e763f631&=&format=webp&quality=lossless&width=419&height=419" alt="Viewer" class="author-photo">
+                                <span class="author-name">Hòa</span>
+                            </div>
+                            <div class="wish-content">
+                                <p class="wish-text">Chúc bé Tún tuổi mới ngày càng trẻ trung, đáng yêu,hài hước nhất thiên hà. </p>
+                            </div>
+                        </div>
+                        <div class="friend-wish">
+                            <div class="author-info">
+                                <img src="https://media.discordapp.net/attachments/1400073121699991672/1400124541405233152/Khong_Co_Tieu_e132.png?ex=68feda57&is=68fd88d7&hm=a40e0c7e183eb9dda09b0f485a4617052dc4eca6a396c62484a212b7e763f631&=&format=webp&quality=lossless&width=419&height=419" alt="Viewer" class="author-photo">
+                                <span class="author-name">Lê Haeniun</span>
+                            </div>
+                            <div class="wish-content">
+                                <p class="wish-text">Chúc anh Híu tuổi mới sức khoẻ, hạnh phúc và như 18 tuổi=)) Xem từng vid của a đều đem lại nhx niềm vui tích cực sau nhx giờ học mệt mỏi áp lực trên trường 🤧.
+                                     Dù e ko khoẻ tay để vẽ tặng a một bức tranh nhưng cx mong a nhận nhx tấm chân thành này. Mong rằng chất lượng vid của a Hiếu sẽ luôn mang lại nhx điều tích cực cho mng 💗
+                                      MỘT LẦN NỮA, CHÚC ANH HIẾU SINH NHẬT SIUUU DUI DẺ 😊🥳🤩🤯</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page 9 - More Friends' Wishes -->
+            <div class="page page9">
+                <div class="page-content friends-page">
+                    <div class="friends-wishes">
+                        <div class="friend-wish">
+                            <div class="author-info">
+                                <img src="https://media.discordapp.net/attachments/1400073121699991672/1400124541405233152/Khong_Co_Tieu_e132.png?ex=68feda57&is=68fd88d7&hm=a40e0c7e183eb9dda09b0f485a4617052dc4eca6a396c62484a212b7e763f631&=&format=webp&quality=lossless&width=419&height=419" alt="Viewer" class="author-photo">
+                                <span class="author-name">NoriKa</span>
+                            </div>
+                            <div class="wish-content">
+                                <p class="wish-text">em chào anh Híu em là NoriKa đây, những lời chúc của em dành cho anh đã có trong bức thư kèm tranh rồi, nhưng chúc nữa thì lại tuyệt vời 👽.
+                                        Chúc anh Hiếu tuổi mới luôn vui vẻ, sức khỏe, bình an nhó </p>
+                            </div>
+                        </div>
+                        <div class="friend-wish">
+                            <div class="author-info">
+                                <img src="https://media.discordapp.net/attachments/1400073121699991672/1400124541405233152/Khong_Co_Tieu_e132.png?ex=68feda57&is=68fd88d7&hm=a40e0c7e183eb9dda09b0f485a4617052dc4eca6a396c62484a212b7e763f631&=&format=webp&quality=lossless&width=419&height=419" alt="Viewer" class="author-photo">
+                                <span class="author-name">Yeon Biii</span>
+                            </div>
+                            <div class="wish-content">
+                                <p class="wish-text">Chúc mừng sinh nhật anh Tún nha.
+                                     Chúc anh Tún lun skibidi thành công và trúng vé số thành tỷ Phú thế giới vượt qua elon musk và làm video cho tún con xem nếu không big daddy bẻo hoàng sẽ phạt anh🐧</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page 10 - More Friends' Wishes -->
+            <div class="page page10">
+                <div class="page-content friends-page">
+                    <div class="friends-wishes">
+                        <div class="friend-wish">
+                            <div class="author-info">
+                                <img src="https://media.discordapp.net/attachments/1400073121699991672/1400124541405233152/Khong_Co_Tieu_e132.png?ex=68feda57&is=68fd88d7&hm=a40e0c7e183eb9dda09b0f485a4617052dc4eca6a396c62484a212b7e763f631&=&format=webp&quality=lossless&width=419&height=419" alt="Viewer" class="author-photo">
+                                <span class="author-name">KietTrolled</span>
+                            </div>
+                            <div class="wish-content">
+                                <p class="wish-text">Chúc giáo sư OBS sức khoẻ, mạnh khoẻ</p>
+                            </div>
+                        </div>
+                        <div class="friend-wish">
+                            <div class="author-info">
+                                <img src="https://media.discordapp.net/attachments/1400073121699991672/1400124541405233152/Khong_Co_Tieu_e132.png?ex=68feda57&is=68fd88d7&hm=a40e0c7e183eb9dda09b0f485a4617052dc4eca6a396c62484a212b7e763f631&=&format=webp&quality=lossless&width=419&height=419" alt="Viewer" class="author-photo">
+                                <span class="author-name">khoainuosng</span>
+                            </div>
+                            <div class="wish-content">
+                                <p class="wish-text">Gửi đến anh DesmondVu (1-2), Giáo Sư OBS, Vũ (c)kim cương, bé Tún cùng nhiều biệt danh khác một lời chúc mừng sinh nhật.
+
+  +) Chúc anh sang tuổi mới ngày càng trưởng thành hơn, đẹp trai, ngày càng thăng tiến trong công việc và sáng tạo hơn trong quá trình nấu content.
+
+  +) Chúc anh ngày càng khỏe mạnh ( cả về mặt tinh thần và thân thể ) để có thể mang sự sáng tạo nghệ thuật đầy điện ảnh đến với viewer nhiều hơn nữa.
+                
+             Để mà nói thì em tham gia hành trình youtube của anh cũng chưa quá lâu, bắt đầu biết kênh của anh qua một vài video của anh HK15, xem một vài video thì thấy anh này khá hài. Quay đi quay lại cũng đã 4 năm kể từ lúc lần đầu biết đến anh. Chân thành cảm ơn anh và chúc anh có một dịp sinh nhật vui vẻ bên người thân gia đình và bạn bè.
+
+P/s: nhân dịp sinh nhật này anh có thể cho mod của kênh một vài ổ bánh mì chống đói cùng vài chai nước được không :D?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page 11 - More Friends' Wishes -->
+            <div class="page page11">
+                <div class="page-content friends-page">
+                    <div class="friends-wishes">
+                        <div class="friend-wish">
+                            <div class="author-info">
+                                <img src="https://media.discordapp.net/attachments/1400073121699991672/1400124541405233152/Khong_Co_Tieu_e132.png?ex=68feda57&is=68fd88d7&hm=a40e0c7e183eb9dda09b0f485a4617052dc4eca6a396c62484a212b7e763f631&=&format=webp&quality=lossless&width=419&height=419" alt="Viewer" class="author-photo">
+                                <span class="author-name">Skeleton</span>
+                            </div>
+                            <div class="wish-content">
+                                <p class="wish-text">Bac xuong chuc be tuns tuoi moi van cute, bell, mups va di nhieu quan gay bar nx nha</p>
+                            </div>
+                        </div>
+                        <div class="friend-wish">
+                            <div class="author-info">
+                                <img src="https://media.discordapp.net/attachments/1400073121699991672/1400124541405233152/Khong_Co_Tieu_e132.png?ex=68feda57&is=68fd88d7&hm=a40e0c7e183eb9dda09b0f485a4617052dc4eca6a396c62484a212b7e763f631&=&format=webp&quality=lossless&width=419&height=419" alt="Viewer" class="author-photo">
+                                <span class="author-name">hong fuoc aka bevich</span>
+                            </div>
+                            <div class="wish-content">
+                                <p class="wish-text">đã lâu em không ngoi lên, chúc anh híu 1 sinh nhật thật vui vẻ, tuổi mới bình an!!
+(btw fan art em vẽ hơi halloween 1 chút vì cũm sắp đến hihi)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page 12 - More Friends' Wishes -->
+            <div class="page page12">
+                <div class="page-content friends-page">
+                    <div class="friends-wishes">
+                        <div class="friend-wish">
+                            <div class="author-info">
+                                <img src="https://media.discordapp.net/attachments/1400073121699991672/1400124541405233152/Khong_Co_Tieu_e132.png?ex=68feda57&is=68fd88d7&hm=a40e0c7e183eb9dda09b0f485a4617052dc4eca6a396c62484a212b7e763f631&=&format=webp&quality=lossless&width=419&height=419" alt="Viewer" class="author-photo">
+                                <span class="author-name">Zased</span>
+                            </div>
+                            <div class="wish-content">
+                                <p class="wish-text">Chúc anh Hiếu sinh nhật vui vẻ, chúc anh tuổi mới luôn tươi vui, sự hạnh phúc tỉ lệ thuận với sự trưởng thành, chúc anh Hiếu sớm đánh bại Desmondvu 1 để trở thành người hài nhất CKG</p>
+                            </div>
+                        </div>
+                        <div class="friend-wish">
+                            <div class="author-info">
+                                <img src="https://media.discordapp.net/attachments/1400073121699991672/1400124541405233152/Khong_Co_Tieu_e132.png?ex=68feda57&is=68fd88d7&hm=a40e0c7e183eb9dda09b0f485a4617052dc4eca6a396c62484a212b7e763f631&=&format=webp&quality=lossless&width=419&height=419" alt="Viewer" class="author-photo">
+                                <span class="author-name">CKG_T.Ly</span>
+                            </div>
+                            <div class="wish-content">
+                                <p class="wish-text">Chúc anh Híu sinh nhật vui vẻ💞 Chúc anh sẽ tràn đầy niềm vui và nhận được nhiều sự tích cực. Mong anh sẽ thành công trong tương lai và mãi mãi cuteeee ạaa
+                                    Chúc giáo sư OBS có một ngày sinh nhật 
+                                    Vui vẻ </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page 13 - More Friends' Wishes -->
+            <div class="page page13">
+                <div class="page-content friends-page">
+                    <div class="friends-wishes">
+                        <div class="friend-wish">
+                            <div class="author-info">
+                                <img src="https://media.discordapp.net/attachments/1400073121699991672/1400124541405233152/Khong_Co_Tieu_e132.png?ex=68feda57&is=68fd88d7&hm=a40e0c7e183eb9dda09b0f485a4617052dc4eca6a396c62484a212b7e763f631&=&format=webp&quality=lossless&width=419&height=419" alt="Viewer" class="author-photo">
+                                <span class="author-name">Diên Vĩ</span>
+                            </div>
+                            <div class="wish-content">
+                                <p class="wish-text">Chúc anh tuổi mới, năm mới, gặt hái dc nhiều thành công và thành tựu nhoo💖</p>
+                            </div>
+                        </div>
+                        <div class="friend-wish">
+                            <div class="author-info">
+                                <img src="https://media.discordapp.net/attachments/1400073121699991672/1400124541405233152/Khong_Co_Tieu_e132.png?ex=68feda57&is=68fd88d7&hm=a40e0c7e183eb9dda09b0f485a4617052dc4eca6a396c62484a212b7e763f631&=&format=webp&quality=lossless&width=419&height=419" alt="Viewer" class="author-photo">
+                                <span class="author-name">Trình</span>
+                            </div>
+                            <div class="wish-content">
+                                <p class="wish-text">Em chúc anh Vũ của chúng ta có một tuổi mới thật khỏe mạnh, nhiều skhoe làm an phát tài phát lộc. Thật sự là lúc em video của anh em cảm thấy mình được chữa lành hẳn vừa được cười đến xém nghẹt thở =)). Chúc anh làm vid càng ngày càng ok kê la</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page 14 - More Friends' Wishes -->
+            <div class="page page14">
+                <div class="page-content friends-page">
+                    <div class="friends-wishes">
+                        <div class="friend-wish">
+                            <div class="author-info">
+                                <img src="https://media.discordapp.net/attachments/1400073121699991672/1400124541405233152/Khong_Co_Tieu_e132.png?ex=68feda57&is=68fd88d7&hm=a40e0c7e183eb9dda09b0f485a4617052dc4eca6a396c62484a212b7e763f631&=&format=webp&quality=lossless&width=419&height=419" alt="Viewer" class="author-photo">
+                                <span class="author-name">joriobaro</span>
+                            </div>
+                            <div class="wish-content">
+                                <p class="wish-text">Chúc anh híu tuổi mới thành công hơn, ngầu hơn, hài hơn, ít chửi viewer nha</p>
+                            </div>
+                        </div>
+                        <div class="friend-wish">
+                            <div class="author-info">
+                                <img src="https://media.discordapp.net/attachments/1400073121699991672/1400124541405233152/Khong_Co_Tieu_e132.png?ex=68feda57&is=68fd88d7&hm=a40e0c7e183eb9dda09b0f485a4617052dc4eca6a396c62484a212b7e763f631&=&format=webp&quality=lossless&width=419&height=419" alt="Viewer" class="author-photo">
+                                <span class="author-name">Haruko</span>
+                            </div>
+                            <div class="wish-content">
+                                <p class="wish-text">Tuổi mới vui vẻ nhé giáo sư,em tin năm 2077 a sẽ có thể trồng 1 cánh đồng cam và giàu như mark zuckerberg =>> </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page 15 - More Friends' Wishes -->
+            <div class="page page15">
+                <div class="page-content friends-page">
+                    <div class="friends-wishes">
+                        <div class="friend-wish">
+                            <div class="author-info">
+                                <img src="https://media.discordapp.net/attachments/1400073121699991672/1400124541405233152/Khong_Co_Tieu_e132.png?ex=68feda57&is=68fd88d7&hm=a40e0c7e183eb9dda09b0f485a4617052dc4eca6a396c62484a212b7e763f631&=&format=webp&quality=lossless&width=419&height=419" alt="Viewer" class="author-photo">
+                                <span class="author-name">naxto</span>
+                            </div>
+                            <div class="wish-content">
+                                <p class="wish-text">chúc anh tún sinh nhật vui vẻ thêm tuổi mới nhiều thành công</p>
+                            </div>
+                        </div>
+                        <div class="friend-wish">
+                            <div class="author-info">
+                                <img src="https://media.discordapp.net/attachments/1400073121699991672/1400124541405233152/Khong_Co_Tieu_e132.png?ex=68feda57&is=68fd88d7&hm=a40e0c7e183eb9dda09b0f485a4617052dc4eca6a396c62484a212b7e763f631&=&format=webp&quality=lossless&width=419&height=419" alt="Viewer" class="author-photo">
+                                <span class="author-name">enNitro</span>
+                            </div>
+                            <div class="wish-content">
+                                <p class="wish-text">Chúc anh hiếu sinh nhật vui vẻ và #giaicuudeadserver</p>
+                            </div>
+                        </div>
+                        <div class="friend-wish">
+                            <div class="author-info">
+                                <img src="https://media.discordapp.net/attachments/1400073121699991672/1400124541405233152/Khong_Co_Tieu_e132.png?ex=68feda57&is=68fd88d7&hm=a40e0c7e183eb9dda09b0f485a4617052dc4eca6a396c62484a212b7e763f631&=&format=webp&quality=lossless&width=419&height=419" alt="Viewer" class="author-photo">
+                                <span class="author-name">Ngoc Diep</span>
+                            </div>
+                            <div class="wish-content">
+                                <p class="wish-text">
+                                    Anh biết gì không? Hôm nay là ngày mà Anh có thể thực hiện điều ước mà không cần đến sao băng đó! Phải rồii! Nay là 28/10, sinh nhật Anh Híu mà. Nhanh thật, mới mà 3 năm rồi. Em đã theo dõi Anh Híu từ những video Desmond Vũ. Phải nói Anh có cách nói chuyện cuốn và hài hước, hoặc là do sở thích kì cục của em=)) Mấy người chê content của Anh Híu chả biết gì, peak vl. Cảm ơn Anh đã luôn đem lại năng lượng tích cực cho em và vương triều vũ goffy! Chúc Anh luôn thành công trên con đường mà Anh theo đuổi, mong chút tình cảm của em và những viewer khác sẽ tạo thành 1 chiếc bánh sinh nhật ý nghĩa nhất mà Anh Híu được đón nhận. Không chỉ sinh nhật, mà là mọi ngày đều vui vẻ nhaa
+                                    Đang học chợt nhớ ra chưa kịp chúc Anh gì hết nên chỉ ngắn vậy thui. 
+                                    Sinh nhật vui vẻ thật vui vẻ nha bé Tún cutee.
+
+                                    Love for Vu Minh Hieu ❤️
+                                                                         
+
+                                                                      </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page 16 - FanArt Gallery -->
+            <div class="page page16">
+                <div class="page-content fanart-page">
+                    <h2 class="section-title">FanArt Gallery ✨</h2>
+                    <div class="fanart-grid">
+                        <div class="fanart-item">
+                            <div class="fanart-img-container">
+                                <img src="fanArt/chucmungsinhnhatbetun - Hiền Hòa.png" alt="FanArt 1" class="fanart-img">
+                                <span class="artist-overlay">Artist: Hòa</span>
+                            </div>
+                        </div>
+                        <div class="fanart-item">
+                            <div class="fanart-img-container">
+                                <img src="fanArt/hpbd - Lmao Lmao.png" alt="FanArt 2" class="fanart-img">
+                                <span class="artist-overlay">Artist: khoainuosng</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page 17 - More FanArt -->
+            <div class="page page17">
+                <div class="page-content fanart-page">
+                    <div class="fanart-grid">
+                        <div class="fanart-item">
+                            <div class="fanart-img-container">
+                                <img src="fanArt/23ca5cfd-5093-4b93-bc97-69b1405ccf9f - Evelyn Charlotte.jpg" alt="FanArt 3" class="fanart-img">
+                                <span class="artist-overlay">Artist: hong fuoc aka bevick</span>
+                            </div>
+                            <div class="fanart-info"></div>
+                        </div>
+                        <div class="fanart-item">
+                            <div class="fanart-img-container">
+                                <img src="fanArt/inbound4566028313758216064 - trucly_ng.png" alt="FanArt 4" class="fanart-img">
+                                <span class="artist-overlay">Artist: CKG T.Ly</span>
+                            </div>
+                            <div class="fanart-info"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page page18">
+                <div class="page-content fanart-page">
+                    <div class="fanart-grid">
+                        <div class="fanart-item">
+                            <div class="fanart-img-container">
+                                <img src="fanArt/Diamondvu2 - Ngọc Chu.png" alt="FanArt 3" class="fanart-img">
+                                <span class="artist-overlay">Artist: Haruko</span>
+                            </div>
+                            <div class="fanart-info"></div>
+                        </div>
+                        <div class="fanart-item">
+                            <div class="fanart-img-container">
+                                <img src="fanArt/IMG_2242 - viễn vũ.jpeg" alt="FanArt 6" class="fanart-img">
+                                <span class="artist-overlay">Artist: Viễn Vũ</span>
+                            </div>
+                        </div>
+                        <div class="fanart-item">
+                            <div class="fanart-img-container">
+                                <img src="fanArt/FanArt của enNitro.jpg" alt="FanArt 7" class="fanart-img">
+                                <span class="artist-overlay">Artist: enNitro</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Back Cover -->
+            <div class="page back-cover">
+                <div class="back-content">
+                    <p>Made with ❤️</p>
+                    <p class="year">2025</p>
+                </div>
+            </div>
+        </div>
+    </div>
+            <!-- Confetti Effect -->
+            <div class="confetti"></div>
+        </div>
+
+        <!-- FanArt Modal -->
+        <div id="fanart-modal" class="fanart-modal">
+            <div id="fanart-modal-content" class="fanart-modal-content">
+                <img id="fanart-modal-img" src="" alt="FanArt Detail" class="fanart-modal-img">
+                <div id="fanart-modal-artist" class="fanart-modal-artist"></div>
+                <button id="fanart-modal-close" class="fanart-modal-close">&times;</button>
+            </div>
+        </div>
+
+        <!-- Scripts -->
+        <script src="script.js"></script>
+    </body>
+</html>

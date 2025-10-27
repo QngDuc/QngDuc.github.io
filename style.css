@@ -1,83 +1,181 @@
+/* ===== Reset and Base Styles ===== */
 /* FanArt Modal Styles */
+/* ===== FanArt Gallery Styles ===== */
+.fanart-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    padding: 10px;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.fanart-item {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.fanart-img-container {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
+    z-index: 5;
+}
+
+.fanart-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+    pointer-events: none;
+}
+
+.fanart-img-container:hover {
+    transform: translateY(-5px);
+}
+
+.fanart-img-container:hover .fanart-img {
+    transform: scale(1.05);
+}
+
+.artist-overlay {
+    position: absolute;
+    left: 0;
+    bottom: -100%;
+    width: 100%;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: #fff;
+    font-size: 0.95em;
+    padding: 30px 10px 10px;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    transition: bottom 0.3s ease;
+}
+
+.fanart-img-container:hover .artist-overlay {
+    bottom: 0;
+}
+
+/* ===== Modal Styles ===== */
 .fanart-modal {
     display: none;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0,0,0,0.8);
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.95);
     z-index: 9999;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
+
 .fanart-modal.show {
     display: flex;
+    animation: modalFadeIn 0.3s ease-out;
 }
+
+@keyframes modalFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
 .fanart-modal-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 90vw;
-    max-height: 90vh;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: none;
+    max-width: 95%;
+    max-height: 95vh;
+    margin: auto;
+    cursor: default;
 }
+
 .fanart-modal-img {
     max-width: 100%;
-    max-height: 80vh;
+    max-height: 85vh;
     border-radius: 12px;
-    box-shadow: 0 0 30px #000;
-    display: block;
-    margin: auto;
+    box-shadow: 0 0 40px rgba(0,0,0,0.5);
+    object-fit: contain;
+    animation: imageZoomIn 0.3s ease-out;
 }
+
+@keyframes imageZoomIn {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
 .fanart-modal-artist {
     color: #fff;
     text-align: center;
-    font-size: 1.2em;
-    margin-top: 10px;
+    font-size: 1.5em;
+    margin-top: 20px;
     font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    animation: textFadeIn 0.4s ease-out;
 }
+
+@keyframes textFadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 .fanart-modal-close {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: -20px;
+    right: -20px;
     background: #ff6b6b;
     color: #fff;
     border: none;
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    font-size: 1.5em;
+    width: 36px;
+    height: 36px;
+    font-size: 2em;
+    line-height: 32px;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    z-index: 10000;
+    transition: background 0.2s;
 }
+
+.fanart-modal-close:hover {
+    background: #ff4f4f;
+}
+/* ===== Global Reset ===== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* ===== Base Layout ===== */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
 body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
     background: linear-gradient(45deg, #ff6b6b, #ffd93d);
-    overflow: hidden;
     font-family: 'Arial', sans-serif;
 }
 
 /* Disable default browser zoom on ctrl + scroll */
 @media screen and (min-width: 0px) {
     html {
-        -ms-text-size-adjust: none;
         -webkit-text-size-adjust: none;
         text-size-adjust: none;
     }
@@ -85,35 +183,62 @@ body {
 
 .book-container {
     perspective: 2000px;
-    margin: 50px auto;
+    margin: auto;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .book {
     position: relative;
-    width: 350px;
-    height: 500px;
+    width: min(350px, 90vw);
+    height: min(500px, 80vh);
     transform-style: preserve-3d;
     transform: rotateX(10deg);
     transition: transform 0.3s ease;
+    margin: 0;
+    perspective: 2000px;
 }
 
 .page {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: #fff;
+    background: #ffffff;
     transform-origin: left;
-    transition: transform 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: transform 0.6s cubic-bezier(0.645, 0.045, 0.355, 1), 
+                box-shadow 0.6s ease,
+                opacity 0.6s ease;
     cursor: pointer;
-    padding: 20px;
+    padding: 0;
     box-shadow: 0 0 20px rgba(0,0,0,0.1);
-    background-image: linear-gradient(to right, #f9f9f9 0%, #fff 100%);
     overflow: hidden;
+    border-radius: 0 5px 5px 0;
+    transform-style: preserve-3d;
+}
+
+.page.fade {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.page:hover {
+    box-shadow: 5px 5px 30px rgba(0,0,0,0.2);
 }
 
 .cover {
     z-index: 4;
-    background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+    border-radius: 5px;
+    box-shadow: 0 0 40px rgba(0,0,0,0.2);
+    overflow: hidden;
+    padding: 0;
+}
+
+.cover .cover-img {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
 .page1 { z-index: 12; }
@@ -133,15 +258,31 @@ body {
 .page15 { z-index: -2; }
 .page16 { z-index: -3; }
 .page17 { z-index: -4; }
+.page16 { z-index: -3; }
+.page17 { z-index: -4; }
 .page18 { z-index: -5; }
+.page19 { z-index: -6; }
+.page20 { z-index: -7; }
 
-.back-cover {
-    z-index: -7;
-    background: linear-gradient(45deg, #ffd93d, #ff6b6b);
+.back-content {
+    background: rgba(255, 255, 255, 0);
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 5px;
+    z-index: -10;
 }
 
+.back-content {
+    background: rgba(255, 255, 255, 0);
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+
 .page.turn {
-    transform: rotateY(-180deg);
+    transform: translateX(-10%) rotateY(-180deg);
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
 }
 
 .cover-content {
@@ -150,13 +291,16 @@ body {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    color: white;
+    color: rgba(255, 255, 255, 0);
     text-align: center;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.2) 0%, transparent 70%);
 }
 
 .cover-content h1 {
     font-size: 2.5em;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    letter-spacing: 2px;
+    animation: glow 2s ease-in-out infinite alternate;
 }
 
 .cover-img {
@@ -165,7 +309,23 @@ body {
     border-radius: 50%;
     overflow: hidden;
     border: 5px solid white;
-    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    box-shadow: 0 0 30px rgba(0,0,0,0.3);
+    transform: translateZ(30px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cover-img:hover {
+    transform: translateZ(40px);
+    box-shadow: 0 0 40px rgba(0,0,0,0.4);
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff6b6b, 0 0 20px #ff6b6b;
+    }
+    to {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff6b6b, 0 0 40px #ff6b6b;
+    }
 }
 
 .cover-photo {
@@ -176,14 +336,74 @@ body {
 
 .page-content {
     height: 100%;
+    position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
-    padding: 10px;
+    padding: 0;
     box-sizing: border-box;
     max-height: 100%;
+    overflow: hidden;
+}
+
+.fullpage-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.content-wrapper {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0);
     overflow-y: auto;
+    opacity: 1;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 107, 107, 0.5) rgba(255, 255, 255, 0.1);
+}
+
+.message-section {
+    padding: 20px;
+    margin-top: 300px;
+}
+
+.friends-wishes {
+    background: rgba(255, 255, 255, 0);
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 5px;
+}
+
+.friend-wish {
+    background: rgba(255, 255, 255, 0);
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+.section-title {
+    color: #ff6b6b;
+    text-decoration: underline;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    margin-bottom: 1px;
+    background: rgba(255, 255, 255, 0);
+    padding: 10px 20px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.content-overlay {
+    opacity: 1;
 }
 
 .photo-section {
@@ -191,13 +411,25 @@ body {
     height: 200px;
     overflow: hidden;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transform: translateZ(20px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo-section:hover {
+    transform: translateZ(30px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
 }
 
 .page-photo {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.page-photo:hover {
+    transform: scale(1.05);
 }
 
 .photo-gallery {
@@ -227,7 +459,7 @@ body {
 .section-title {
     text-align: center;
     color: #ff6b6b;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
     font-size: 1.4em;
     width: 100%;
     box-sizing: border-box;
@@ -236,7 +468,7 @@ body {
 .wish-container, .friends-wishes, .colleagues-wishes {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 1px;
 }
 
 .author-info {
@@ -295,33 +527,66 @@ body {
     transform: scale(1.05);
 }
 
-/* FanArt Gallery Styles */
-.fanart-grid {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 20px;
-    padding: 10px;
-    height: 100%;
-    overflow-y: auto;
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
 }
 
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(234, 124, 21, 0.5);
+    border-radius: 10px;
+    transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(230, 153, 9, 0.8);
+}
+
+/* FanArt Gallery Styles */
+/* ===== FanArt Gallery Layout ===== */
+.fanart-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 20px;
+    height: 100%;
+    overflow-y: auto;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+/* FanArt Card Styles */
 .fanart-item {
     background: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     overflow: hidden;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
+    position: relative;
 }
 
 .fanart-item:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
 }
 
+/* FanArt Image Styles */
 .fanart-img {
     width: 100%;
-    height: 200px;
+    height: 250px;
     object-fit: cover;
     border-bottom: 1px solid #eee;
+    transition: transform 0.5s ease;
+}
+
+.fanart-item:hover .fanart-img {
+    transform: scale(1.05);
 }
 
 .artist-overlay {
@@ -329,32 +594,38 @@ body {
     left: 0;
     bottom: 0;
     width: 100%;
-    background: rgba(0,0,0,0.5);
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
     color: #fff;
-    font-size: 1em;
-    padding: 6px 0;
+    font-size: 1.1em;
+    padding: 20px 10px 10px;
     text-align: center;
     font-weight: bold;
     letter-spacing: 1px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.fanart-item:hover .artist-overlay {
+    opacity: 1;
 }
 
 .fanart-info {
-    padding: 10px;
+    padding: 15px;
     text-align: center;
+    background: #fff;
 }
 
 .artist-name {
     font-weight: bold;
-    color: #666;
-    margin-bottom: 5px;
+    color: #444;
+    margin-bottom: 8px;
+    font-size: 1.1em;
 }
 
 .fanart-caption {
-    color: #888;
+    color: #666;
     font-style: italic;
+    line-height: 1.4;
 }
 .wish-grid {
     display: grid;
@@ -877,53 +1148,133 @@ body {
     50% { transform: translateY(-10px); }
 }
 
-.cake {
+/* ===== Birthday Cake Animation ===== */
+/* ===== Birthday Cake Styles ===== */
+.cake-container {
     position: absolute;
-    bottom: 30px;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
-    width: 140px;
-    height: 120px;
-    background: #f15bb5;
-    border-radius: 10px 10px 0 0;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.cake {
+    position: relative;
+    width: 200px;
+    height: 160px;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    border-radius: 15px 15px 5px 5px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    margin: 50px auto;
 }
 
 .cake::before {
     content: '';
     position: absolute;
-    top: -20px;
-    width: 100%;
-    height: 20px;
-    background: #ff9cda;
-    border-radius: 20px;
+    top: -25px;
+    left: -10px;
+    right: -10px;
+    height: 25px;
+    background: linear-gradient(135deg, #fad0c4 0%, #ff9a9e 100%);
+    border-radius: 25px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
+.cake::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -15px;
+    right: -15px;
+    height: 15px;
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+/* Candle and Flame Effects */
 .candle {
     position: absolute;
-    top: -30px;
+    top: -45px;
     left: 50%;
     transform: translateX(-50%);
-    width: 10px;
-    height: 30px;
-    background: #fff;
-    border-radius: 5px;
+    width: 12px;
+    height: 35px;
+    background: linear-gradient(to right, #fff9ec, #ffffff);
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.candle::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: -4px;
+    right: -4px;
+    height: 6px;
+    background: #ffecd2;
+    border-radius: 50%;
 }
 
 .flame {
     position: absolute;
-    top: -20px;
+    top: -22px;
     left: 50%;
     transform: translateX(-50%);
-    width: 12px;
-    height: 20px;
-    background: #ff9900;
+    width: 16px;
+    height: 25px;
+    background: linear-gradient(to bottom, #ffef9e, #ff9900);
     border-radius: 50% 50% 20% 20%;
+    box-shadow: 0 0 15px #ff9900, 0 0 30px #ff9900, 0 0 45px rgba(255, 153, 0, 0.3);
     animation: flicker 0.6s ease-in-out infinite alternate;
 }
 
+/* Decorations */
+.cake-decorations {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    height: 15px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.decoration {
+    width: 12px;
+    height: 12px;
+    background: #ffecd2;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    animation: float 2s ease-in-out infinite;
+}
+
+.decoration:nth-child(2n) {
+    animation-delay: 0.5s;
+    background: #fcb69f;
+}
+
+.decoration:nth-child(3n) {
+    animation-delay: 1s;
+    background: #ff9a9e;
+}
+
+/* ===== Cake Animations ===== */
 @keyframes flicker {
     0% { transform: translateX(-50%) scale(1); filter: brightness(100%); }
-    100% { transform: translateX(-50%) scale(1.2); filter: brightness(150%); }
+    25% { transform: translateX(-52%) scale(1.1); filter: brightness(130%); }
+    50% { transform: translateX(-50%) scale(1.15); filter: brightness(150%); }
+    75% { transform: translateX(-48%) scale(1.1); filter: brightness(130%); }
+    100% { transform: translateX(-50%) scale(1); filter: brightness(100%); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
 }
 
 .content {
@@ -993,6 +1344,8 @@ body {
     50% { opacity: 0.3; transform: scale(1.5); }
 }
 
+/* ===== Interactive Elements ===== */
+/* Surprise Button */
 .surprise-btn {
     padding: 10px 20px;
     background: #f15bb5;
@@ -1002,6 +1355,8 @@ body {
     font-size: 1em;
     cursor: pointer;
     transition: transform 0.3s, background 0.3s;
+    margin-left: 85px;
+    margin-top: 350px;
 }
 
 .surprise-btn:hover {
@@ -1009,6 +1364,7 @@ body {
     background: #ff9cda;
 }
 
+/* Confetti Animation */
 .confetti {
     position: fixed;
     width: 100%;

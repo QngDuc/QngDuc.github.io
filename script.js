@@ -4,26 +4,40 @@ document.addEventListener('DOMContentLoaded', () => {
     const fanartModalImg = document.getElementById('fanart-modal-img');
     const fanartModalArtist = document.getElementById('fanart-modal-artist');
     const fanartModalClose = document.getElementById('fanart-modal-close');
-    document.querySelectorAll('.fanart-img').forEach(img => {
-        img.style.cursor = 'zoom-in';
-        img.addEventListener('click', function() {
+    // Handle FanArt clicks
+    const fanartContainers = document.querySelectorAll('.fanart-img-container');
+    fanartContainers.forEach(container => {
+        container.addEventListener('click', function(e) {
+            // Prevent page turning
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const img = container.querySelector('.fanart-img');
+            if (!img) return;
+            
             fanartModalImg.src = img.src;
+            
             // Find artist name
             let artist = '';
-            const overlay = img.parentElement.querySelector('.artist-overlay');
+            const overlay = container.querySelector('.artist-overlay');
             if (overlay) {
-                artist = overlay.textContent;
-            } else {
-                // fallback: try next sibling .fanart-info > .artist-name
-                const info = img.parentElement.nextElementSibling;
-                if (info && info.querySelector('.artist-name')) {
-                    artist = info.querySelector('.artist-name').textContent;
-                }
+                // Remove 'Artist: ' prefix if it exists
+                artist = overlay.textContent.replace('Artist: ', '');
             }
             fanartModalArtist.textContent = artist;
             fanartModal.classList.add('show');
         });
     });
+
+    // Prevent default image behavior
+    document.querySelectorAll('.fanart-img').forEach(img => {
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+        });
+    });
+
     fanartModalClose.addEventListener('click', function() {
         fanartModal.classList.remove('show');
         fanartModalImg.src = '';
@@ -99,29 +113,61 @@ document.addEventListener('DOMContentLoaded', () => {
     pages.forEach((page, index) => {
         if (index < pages.length - 1) { // Don't add click event to back cover
             page.addEventListener('click', (e) => {
+                // Skip if clicking on fanart
+                if (e.target.closest('.fanart-img-container')) {
+                    return;
+                }
+                
                 const rect = page.getBoundingClientRect();
                 const clickX = e.clientX - rect.left;
+                
                 if (clickX < rect.width / 3 && currentPage > 0) {
                     // Clicked left third: go back
                     pages[currentPage - 1].classList.remove('turn');
+                    // Clear all fade effects first
+                    pages.forEach(p => p.classList.remove('fade'));
+                    // Add fade only to the page in front of the current page
+                    if (currentPage - 2 >= 0) {
+                        pages[currentPage - 2].classList.add('fade');
+                    }
                     currentPage--;
                 } else if (!page.classList.contains('turn')) {
                     // Clicked right side: go forward
                     page.classList.add('turn');
+                    // Clear all fade effects first
+                    pages.forEach(p => p.classList.remove('fade'));
+                    // Add fade only to the page in front of this page
+                    if (index - 1 >= 0) {
+                        pages[index - 1].classList.add('fade');
+                    }
                     currentPage = index + 1;
                 }
             });
         }
     });
 
-    // Go back functionality
+    // Page navigation with arrow keys
     document.addEventListener('keydown', (e) => {
         if (e.key === 'ArrowLeft' && currentPage > 0) {
             pages[currentPage - 1].classList.remove('turn');
+            // Clear all fade effects first
+            pages.forEach(p => p.classList.remove('fade'));
+            // Add fade only to the page in front of the current page
+            if (currentPage - 2 >= 0) {
+                pages[currentPage - 2].classList.add('fade');
+            }
             currentPage--;
+        } else if (e.key === 'ArrowRight' && currentPage < pages.length - 1) {
+            pages[currentPage].classList.add('turn');
+            // Clear all fade effects first
+            pages.forEach(p => p.classList.remove('fade'));
+            // Add fade only to the page in front of the current page
+            if (currentPage - 1 >= 0) {
+                pages[currentPage - 1].classList.add('fade');
+            }
+            currentPage++;
         }
     });
-
     // Create confetti effect
     function createConfetti() {
         for(let i = 0; i < 50; i++) {
