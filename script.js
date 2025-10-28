@@ -1,4 +1,102 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Book configuration and state
+    let currentPage = 0;
+    let currentScale = 1;
+    const SCALE_STEP = 0.15;
+    const MIN_SCALE = 0.3;
+    const MAX_SCALE = 2.5;
+
+    // Start button logic
+    const startScreen = document.querySelector('.start-screen');
+    const startButton = document.querySelector('.start-button');
+    const bookContainer = document.querySelector('.book-container');
+    const book = document.querySelector('.book');
+    const pages = document.querySelectorAll('.page');
+
+    function initializeBook() {
+        // Book hover effect
+        book.addEventListener('mousemove', (e) => {
+            const xAxis = (window.innerWidth / 2 - e.pageX) / 35;
+            const yAxis = (window.innerHeight / 2 - e.pageY) / 35;
+            book.style.transform = `rotateX(10deg) rotateY(${xAxis}deg) rotateZ(${yAxis}deg) scale(${currentScale})`;
+        });
+
+        // Reset book position but maintain scale
+        book.addEventListener('mouseleave', () => {
+            book.style.transform = `rotateX(10deg) rotateY(0) rotateZ(0) scale(${currentScale})`;
+        });
+
+        // Hide tips when first page is turned
+        const tips = document.querySelector('.tips');
+        
+        // Page turning functionality
+        pages.forEach((page, index) => {
+            if (index < pages.length - 1) {
+                page.addEventListener('click', (e) => {
+                    if (e.target.closest('.fanart-img-container')) {
+                        return;
+                    }
+                    // Hide tips when page is turned
+                    if (tips) {
+                        tips.style.opacity = '0';
+                        setTimeout(() => {
+                            tips.style.visibility = 'hidden';
+                        }, 500);
+                    }
+                    
+                    const rect = page.getBoundingClientRect();
+                    const clickX = e.clientX - rect.left;
+                    
+                    if (clickX < rect.width / 3 && currentPage > 0) {
+                        // Go back
+                        pages[currentPage - 1].classList.remove('turn');
+                        pages.forEach(p => p.classList.remove('fade'));
+                        if (currentPage - 2 >= 0) {
+                            pages[currentPage - 2].classList.add('fade');
+                        }
+                        currentPage--;
+                    } else if (!page.classList.contains('turn')) {
+                        // Go forward
+                        page.classList.add('turn');
+                        pages.forEach(p => p.classList.remove('fade'));
+                        if (index - 1 >= 0) {
+                            pages[index - 1].classList.add('fade');
+                        }
+                        currentPage = index + 1;
+                    }
+                });
+            }
+        });
+    }
+
+    if (startButton) {
+        startButton.addEventListener('click', () => {
+            startScreen.style.opacity = '0';
+            startScreen.style.pointerEvents = 'none';
+            startScreen.style.transition = 'opacity 0.5s ease-in-out';
+            bookContainer.classList.add('visible');
+            // Reset and reinitialize page turning after transition
+            setTimeout(() => {
+                const pages = document.querySelectorAll('.page');
+                currentPage = 0;
+                pages.forEach(page => {
+                    page.classList.remove('turn');
+                    page.classList.remove('fade');
+                });
+                // Show tips after book appears
+                const tips = document.querySelector('.tips');
+                tips.style.opacity = '1';
+                tips.style.visibility = 'visible';
+            }, 500);
+            // Initialize book functionality after revealing it
+            setTimeout(initializeBook, 500);
+        });
+    }
+    // Ensure loading screen stays visible for the animation duration
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => {
+        document.body.style.overflow = '';
+    }, 4000); // Match this with the total animation duration (3s loading + 0.5s fade out + 0.5s buffer)
     // FanArt modal logic
     const fanartModal = document.getElementById('fanart-modal');
     const fanartModalImg = document.getElementById('fanart-modal-img');
@@ -48,8 +146,6 @@ document.addEventListener('DOMContentLoaded', () => {
             fanartModalImg.src = '';
         }
     });
-    const book = document.querySelector('.book');
-    let bookContainer;
     // Zoom functionality
     function handleZoom(delta) {
         currentScale = Math.max(MIN_SCALE, Math.min(MAX_SCALE, currentScale + delta * SCALE_STEP));
@@ -57,7 +153,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Mouse wheel zoom
-    bookContainer = document.querySelector('.book-container');
     bookContainer.addEventListener('wheel', (e) => {
         e.preventDefault();
         const delta = e.deltaY > 0 ? -1 : 1;
@@ -86,15 +181,9 @@ document.addEventListener('DOMContentLoaded', () => {
             75% { transform: translateX(10px) rotate(5deg); }
         }
     `;
-    document.head.appendChild(style);bookContainer = document.querySelector('.book-container');
-    const pages = document.querySelectorAll('.page');
+    document.head.appendChild(style);
     const surpriseBtn = document.querySelector('.surprise-btn');
     const confettiContainer = document.querySelector('.confetti');
-    let currentPage = 0;
-    let currentScale = 1;
-    const SCALE_STEP = 0.15;
-    const MIN_SCALE = 0.3;
-    const MAX_SCALE = 2.5;
 
     // Book hover effect
     book.addEventListener('mousemove', (e) => {
@@ -148,10 +237,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Page navigation with arrow keys
     document.addEventListener('keydown', (e) => {
+        const tips = document.querySelector('.tips');
         if (e.key === 'ArrowLeft' && currentPage > 0) {
             pages[currentPage - 1].classList.remove('turn');
             // Clear all fade effects first
             pages.forEach(p => p.classList.remove('fade'));
+            // Hide tips when using arrow keys
+            if (tips) {
+                tips.style.opacity = '0';
+                setTimeout(() => {
+                    tips.style.visibility = 'hidden';
+                }, 500);
+            }
             // Add fade only to the page in front of the current page
             if (currentPage - 2 >= 0) {
                 pages[currentPage - 2].classList.add('fade');
@@ -161,6 +258,13 @@ document.addEventListener('DOMContentLoaded', () => {
             pages[currentPage].classList.add('turn');
             // Clear all fade effects first
             pages.forEach(p => p.classList.remove('fade'));
+            // Hide tips when using arrow keys
+            if (tips) {
+                tips.style.opacity = '0';
+                setTimeout(() => {
+                    tips.style.visibility = 'hidden';
+                }, 500);
+            }
             // Add fade only to the page in front of the current page
             if (currentPage - 1 >= 0) {
                 pages[currentPage - 1].classList.add('fade');

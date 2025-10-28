@@ -1,3 +1,231 @@
+/* Tips Styles */
+.tips {
+    position: fixed;
+    margin-top: -150px;    
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    padding: 12px 25px;
+    box-shadow: 0 4px 20px rgba(255, 107, 107, 0.1);
+    z-index: 9999;
+    text-align: left;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+    border: 1px solid rgba(255, 107, 107, 0.2);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+
+.tips p {
+    margin: 5px 0;
+    color: #ff6b6b;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+/* Loading Screen Styles */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeOut 0.5s ease-in-out 3s forwards;
+}
+
+.loading-content {
+    text-align: center;
+}
+
+.loading-hearts {
+    font-size: 4em;
+    margin-bottom: 20px;
+    animation: heartBeat 1s infinite;
+}
+
+.loading-text {
+    color: white;
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    opacity: 0;
+    animation: slideIn 0.5s ease-out 0.5s forwards;
+}
+
+.loading-subtext {
+    color: white;
+    font-size: 1.2em;
+    opacity: 0;
+    animation: slideIn 0.5s ease-out 1s forwards;
+}
+
+@keyframes heartBeat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        visibility: visible;
+    }
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+/* Book Container Initial State */
+.book-container {
+    opacity: 0;
+    animation: bookReveal 1s ease-in-out 3.5s forwards;
+}
+
+@keyframes bookReveal {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Start Screen Styles */
+.start-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.start-content {
+    text-align: center;
+    animation: float 3s ease-in-out infinite;
+}
+
+.start-heart {
+    font-size: 5em;
+    margin-bottom: 20px;
+    animation: pulse 1.5s infinite;
+}
+
+.start-title {
+    color: white;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.start-button {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    background: white;
+    border: none;
+    border-radius: 25px;
+    color: #ff6b6b;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.start-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    background: #fff5f5;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.book-container {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1s ease-in-out;
+}
+
+.book-container.visible {
+    opacity: 1;
+    pointer-events: all;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Tips Styles */
+.tips {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    text-align: left;
+    animation: tipsFadeIn 1s ease-out;
+}
+
+.tips p {
+    margin: 5px 0;
+    color: #ff6b6b;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+@keyframes tipsFadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -20px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
 /* ===== Reset and Base Styles ===== */
 /* FanArt Modal Styles */
 /* ===== FanArt Gallery Styles ===== */
@@ -184,10 +412,32 @@ html, body {
 
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background: linear-gradient(45deg, #ff6b6b, #ffd93d);
     font-family: 'Arial', sans-serif;
+    min-height: 100vh;
+    padding-top: 60px;
+}
+
+.tips {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.95);
+    padding: 12px 25px;
+    border-radius: 25px;
+    box-shadow: 0 4px 20px rgba(255, 107, 107, 0.3);
+    z-index: 9999;
+    text-align: center;
+    animation: tipsFadeIn 1s ease-out;
+    border: 2px solid rgba(255, 107, 107, 0.2);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    width: auto;
+    white-space: nowrap;
 }
 
 /* Disable default browser zoom on ctrl + scroll */
@@ -195,6 +445,7 @@ body {
     html {
         -webkit-text-size-adjust: none;
         text-size-adjust: none;
+        /* text-size-adjust added for browsers that support the standard property */
     }
 }
 
@@ -481,7 +732,13 @@ body {
     background: rgba(255, 255, 255, 0);
     overflow-y: auto;
     opacity: 1;
-    scrollbar-color: rgba(255, 107, 107, 0.5) rgba(255, 255, 255, 0.1);
+}
+
+/* Use scrollbar-color only when supported; fall back to WebKit rules provided elsewhere */
+@supports (scrollbar-color: auto) {
+    .content-wrapper {
+        scrollbar-color: rgba(255, 107, 107, 0.5) rgba(255, 255, 255, 0.1);
+    }
 }
 
 /* Apply scrollbar-width only in browsers that support it (Firefox) */
