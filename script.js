@@ -1,3 +1,7 @@
+/*
+ * Tác giả: Táy Máy, Tỉ mỉ, setup OBS, Desmond Vũ
+ */
+
 document.addEventListener('DOMContentLoaded', () => {
     // Book configuration and state
     let currentPage = 0;
